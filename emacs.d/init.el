@@ -2,33 +2,33 @@
 
 (add-to-list 'package-archives 
     '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+      "http://marmalade-repo.org/packages/") t)
+
+(package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
 (defvar my-packages '(
-                      clojure-mode
+                      cl
                       scala-mode
+		      clojure-mode
                       coffee-mode
                       markdown-mode
+                      logito
+                      pcache
                       gh
                       gist
                       magit
                       yaml-mode
                       tramp
                       undo-tree
-                      starter-kit-bindings
-		      starter-kit-js
-		      starter-kit-lisp
-		      starter-kit-ruby
-                      starter-kit
                       ))
+
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
 
 (ido-mode t)
 
