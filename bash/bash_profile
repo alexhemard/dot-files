@@ -10,21 +10,15 @@ function ec() { emacsclient --no-wait "$@" ;}
 export EDITOR="emacs -nw"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    
+    : # nothing yet
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-
-    alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"    
-
+    alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
     function sha1sum() { /usr/bin/shasum -a 1 "$@" ; }
-
 fi
 
 export CLICOLOR=1
 
 export LSCOLORS=ExFxBxDxCxegedabagacad
-
-
-
 
 
 
