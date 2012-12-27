@@ -37,20 +37,18 @@
 
 ;; erlang steez
 
-(setq erlang-root-dir "/usr/local/Cellar/erlang/R15B01/")
+(setq erlang-root-dir "/usr/local/Cellar/erlang/R15B03-1/")
 
-(setq load-path (cons (concat erlang-root-dir "lib/erlang/lib/tools-2.6.7/emacs")
+(setq load-path (cons (concat erlang-root-dir "lib/erlang/lib/tools-2.6.8/emacs")
                       load-path))
 
 (require 'erlang-start)
 
 ;; mac os x steez 
 
-(if (eq system-type 'darwin)     
-
-  (global-set-key (kbd "s-f") 'ns-toggle-fullscreen)
-
-)
+(if (eq system-type 'darwin)         
+    (set-frame-parameter (selected-frame) 'alpha 90)  ;; hack the planet
+  (global-set-key (kbd "s-f") 'ns-toggle-fullscreen))
 
 ;; random emacs swag
 
