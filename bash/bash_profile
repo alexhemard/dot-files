@@ -1,0 +1,30 @@
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+
+export PS1='\[\e[0;35m\]\W\[\e[0;37m\]$(__git_ps1 " (%s)") $ '
+
+export PATH=$PATH:$HOME/bin
+
+function ec() { emacsclient --no-wait "$@" ;}
+
+export EDITOR="emacs -nw"
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+
+    alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"    
+
+    function sha1sum() { /usr/bin/shasum -a 1 "$@" ; }
+
+fi
+
+export CLICOLOR=1
+
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+
+
+
+
+
