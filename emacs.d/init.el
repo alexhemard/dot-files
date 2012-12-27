@@ -23,6 +23,7 @@
                       yaml-mode
                       tramp
                       undo-tree
+                      color-theme
                       ))
 
 
