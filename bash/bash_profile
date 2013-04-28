@@ -1,5 +1,9 @@
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
+SCRIPT_DIR=$(dirname ${BASH_SOURCE})
+
+source ${SCRIPT_DIR}/git-completion.bash
+source ${SCRIPT_DIR}/git-prompt.sh
+
+
 
 export PS1='\[\e[0;35m\]\W\[\e[0;37m\]$(__git_ps1 " (%s)") $ '
 
