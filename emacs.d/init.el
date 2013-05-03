@@ -14,6 +14,9 @@
                       scala-mode
 		      clojure-mode
                       coffee-mode
+                      sws-mode
+                      jade-mode
+                      less-mode
                       markdown-mode
                       logito
                       pcache
@@ -35,14 +38,19 @@
 
 (setq ido-enable-flex-matching t) ;; straight flexin
 
+;; jade mode
+
+(require 'sws-mode)
+(require 'jade-mode)
+
 ;; erlang steez
 
-(setq erlang-root-dir "/usr/local/Cellar/erlang/R15B03-1/")
+;; (setq erlang-root-dir "/usr/lib64/erlang/")
 
-(setq load-path (cons (concat erlang-root-dir "lib/erlang/lib/tools-2.6.8/emacs")
-                      load-path))
+;; (setq load-path (cons (concat erlang-root-dir "lib/tools-2.6.8/emacs")
+;;                       load-path))
 
-(require 'erlang-start)
+;; (require 'erlang-start)
 
 ;; mac os x steez 
 
@@ -77,6 +85,9 @@
 (setq scroll-step 1) 
 (setq mouse-wheel-progressive-speed nil)
 
+;; coffee mode
+
+(setq coffee-tab-width 2)
 ;; git steez
 
 (require 'magit)
@@ -128,3 +139,7 @@
 (global-set-key (kbd "C-c b") 'git-blame) 
 
 (global-set-key (kbd "C-c o") 'occur)
+
+(set-default-font "PragmataPro-13")
+
+
