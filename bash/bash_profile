@@ -3,11 +3,9 @@ SCRIPT_DIR=$(dirname ${BASH_SOURCE})
 source ${SCRIPT_DIR}/git-completion.bash
 source ${SCRIPT_DIR}/git-prompt.sh
 
-
-
 export PS1='\[\e[0;35m\]\W\[\e[0;37m\]$(__git_ps1 " (%s)") $ '
 
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.bin
 
 function ec() { emacsclient --no-wait "$@" ;}
 
@@ -24,5 +22,5 @@ export CLICOLOR=1
 
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-
-
+alias b="bundle exec"
+alias bi="bundle install --without production"
