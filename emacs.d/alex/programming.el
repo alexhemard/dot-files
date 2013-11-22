@@ -108,9 +108,9 @@
 
 ;; erlang
 
-(setq erlang-root-dir "/usr/local/lib/erlang/")
+(setq erlang-root-dir "/usr/lib64/erlang/")
 
-(setq load-path (cons (concat erlang-root-dir "lib/tools-2.6.8/emacs")
+(setq load-path (cons (concat erlang-root-dir "lib/tools-2.6.11/emacs")
                         load-path))
 
 (require 'erlang-start)
