@@ -47,37 +47,33 @@
 (defun turn-on-paredit () (paredit-mode 1))
 (add-hook 'clojure-mode-hook 'turn-on-paredit)
 
-(require 'nrepl)
+(require 'cider)
 
 ;; Configure nrepl.el
-(setq nrepl-hide-special-buffers t)
-(setq nrepl-popup-stacktraces-in-repl t)
-(setq nrepl-history-file "~/.emacs.d/nrepl-history")
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq cider-repl-tab-command 'indent-for-tab-command)
 
-;; Some default eldoc facilities
-(add-hook 'nrepl-connected-hook
-          (defun pnh-clojure-mode-eldoc-hook ()
-            (add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
-            (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
-            (nrepl-enable-on-existing-clojure-buffers)))
+(setq nrepl-hide-special-buffers nil)
+(setq cider-repl-popup-stacktraces nil)
+(setq cider-repl-history-file "~/.emacs.d/nrepl-history")
 
 ;; Repl mode hook
-(add-hook 'nrepl-mode-hook 'subword-mode)
+(add-hook 'cider-mode-hook 'subword-mode)
 
 ;; Auto completion for NREPL
-(require 'ac-nrepl)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'nrepl-mode))
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+;; (require 'ac-nrepl)
+;;(eval-after-load "auto-complete"
+;;  '(add-to-list 'ac-modes 'nrepl-mode))
+;;(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
 
-(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+;;(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions '(auto-complete)))
-(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;;(defun set-auto-complete-as-completion-at-point-function ()
+;;  (setq completion-at-point-functions '(auto-complete)))
+;;(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
-(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
-(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;;(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;;(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 ;; git
 
@@ -105,17 +101,6 @@
 
 (require 'sws-mode)
 (require 'jade-mode)
-
-;; erlang
-
-(setq erlang-root-dir "/usr/local/lib/erlang/")
-
-(setq load-path (cons (concat erlang-root-dir "lib/tools-2.6.8/emacs")
-                        load-path))
-
-(require 'erlang-start)
-
-;; :/
 
 (load "cc-mode")
 
