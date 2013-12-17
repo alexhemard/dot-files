@@ -77,14 +77,12 @@
 
 ;; git
 
-
 (require 'magit)
 
 (autoload 'magit-status "magit" nil t)
 
-
-;; coffeescript
-
+(if (eq system-type 'darwin)
+    (set-variable 'magit-emacsclient-executable "/usr/local/bin/emacsclient"))
 
 ;; coffee mode
 
