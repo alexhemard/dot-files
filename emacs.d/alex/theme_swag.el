@@ -4,7 +4,7 @@
 
 (load-theme 'cyberpunk t)
 
-(set-default-font "PragmataPro-12") 
+(set-default-font "PragmataPro-14")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -39,3 +39,6 @@
  '(ediff-odd-diff-B ((((class color) (background dark)) (:background "dark red"))) t)
  '(mumamo-background-chunk-major ((((class color) (background dark)) (:background "black"))) t)
  '(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black"))) t))
+
+(require 'powerline)
+(powerline-default-theme)

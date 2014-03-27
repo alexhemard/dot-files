@@ -106,3 +106,7 @@
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; scss
+
+(setq scss-compile-at-save nil)
