@@ -1,1 +1,1 @@
-(setq clojure-defun-style-default-indent t) 
+(setq clojure-indent-style :always-indent)

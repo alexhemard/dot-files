@@ -1,3 +1,5 @@
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; ruby jazz
 
 (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
