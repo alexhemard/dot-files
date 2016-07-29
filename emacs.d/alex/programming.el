@@ -43,9 +43,6 @@
   (ANY 2)
   (context 2))
 
-(defun turn-on-paredit () (paredit-mode 1))
-(add-hook 'clojure-mode-hook 'turn-on-paredit)
-
 (require 'cider)
 
 ;; Configure nrepl.el
