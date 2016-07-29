@@ -1,7 +1,8 @@
 ;; keybindingz
 
+(global-set-key (kbd "M-g r") 'vc-git-grep)
 (global-set-key (kbd "C-c C-a") 'magit-status)
-(global-set-key (kbd "C-c b") 'git-blame)
+(global-set-key (kbd "C-c b") 'jazzy-blame)
 (global-set-key (kbd "C-c o") 'occur)
 (global-set-key (kbd "C-x M-t") 'cleanup-region)
 (global-set-key (kbd "C-c n") 'cleanup-buffer)

@@ -4,7 +4,6 @@
 
 (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
-
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))
@@ -59,6 +58,8 @@
 
 ;; Repl mode hook
 (add-hook 'cider-mode-hook 'subword-mode)
+
+(setq cider-lein-command "~/.bin/lein")
 
 ;; Auto completion for NREPL
 ;; (require 'ac-nrepl)

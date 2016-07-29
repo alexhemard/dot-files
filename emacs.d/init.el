@@ -2,7 +2,7 @@
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 (package-initialize)
 
@@ -15,9 +15,9 @@
                       cider
                       cl
                       clojure-mode
-                      clojure-test-mode
                       coffee-mode
                       color-theme
+                      cyberpunk-theme
                       gh
                       gist
                       jade-mode
@@ -25,9 +25,9 @@
                       logito
                       magit
                       markdown-mode
-                      melpa
                       paredit
                       pcache
+                      popup
                       rainbow-mode
                       rainbow-delimiters
                       scala-mode
@@ -35,6 +35,7 @@
                       sws-mode
                       tramp
                       undo-tree
+                      web-mode
                       vimgolf
                       yaml-mode
                       ))
@@ -59,3 +60,5 @@
 
 (server-start)
 
+(setq custom-file  (concat user-emacs-directory user-login-name "/custom.el"))
+(load custom-file)

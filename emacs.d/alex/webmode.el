@@ -1,0 +1,10 @@
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default standard-ident 2)
+(require 'web-mode)
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  )
+(add-hook 'web-mode-hook  'my-web-mode-hook)

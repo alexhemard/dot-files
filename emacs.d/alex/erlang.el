@@ -1,6 +1,6 @@
 ;; erlang
 
-(setq erlang-root-dir "/usr/lib64/erlang/")
+(setq erlang-root-dir "/usr/local/lib/erlang/")
 
 (setq load-path (cons
                  (concat erlang-root-dir
@@ -12,6 +12,11 @@
                  load-path))
 
 (require 'erlang-start)
+
+(defun erlang-project-dir ()
+  (let* ((src-path (file-name-directory (buffer-file-name)))
+         (pos (string-match "/src/" src-path)))
+    (if pos (substring src-path 0 (+ 1 pos)) src-path)))
 
 ;; (http://blog.erlware.org/2012/05/15/getting-flymake-and-rebar-to-play-nice/)
 (defun ebm-find-rebar-top-recr (dirname)
@@ -62,6 +67,12 @@
 
 (fset 'erlang-flymake-get-code-path-dirs 'ebm-get-deps-code-path-dirs)
 (fset 'erlang-flymake-get-include-dirs-function 'ebm-get-deps-include-dirs)
+
+(defun my-inferior-erlang-compile ()
+  (shell-command.
+    (concat (concat (concat "cd" erlang-project-dir) "; make"))))
+
+(defvar erlang-compile-function 'my-inferior-erlang-compile)
 
 (require 'erlang-flymake)
 (require 'erlang-eunit)
