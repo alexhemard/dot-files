@@ -4,10 +4,8 @@
 
 (set-face-background 'hl-line "#0000aa")
 
-(require 'color-theme)
-
 (load-theme 'cyberpunk t)
-(set-default-font "PragmataPro-14")
+(set-default-font "PragmataProMono-13")
 
 (setq default-tab-width 2)
 

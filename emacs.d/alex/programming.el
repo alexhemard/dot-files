@@ -1,10 +1,14 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; ruby jazz
+;; rbenv
 
-(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
+(let* ((rbenv (file-name-as-directory (getenv "HOME")))
+       (shims (concat rbenv "shims"))
+       (bin   (concat rbenv "bin")))
+  (setq exec-path (append '(shims bin) exec-path))
+  (setenv "PATH" (concat shims ":" bin ":" (getenv "PATH"))))
 
-(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+;; buffer cleanup
 
 (defun untabify-buffer ()
   (interactive)
@@ -30,54 +34,6 @@
 (add-hook 'ruby-mode-hook (lambda ()
                             (add-to-list 'write-file-functions 'delete-trailing-whitespace)
                             (local-set-key "\r" 'newline-and-indent)))
-
-;; clojure
-
-(require 'clojure-mode)
-
-(define-clojure-indent
-  (defroutes 'defun)
-  (GET 2)
-  (POST 2)
-  (PUT 2)
-  (DELETE 2)
-  (HEAD 2)
-  (ANY 2)
-  (context 2))
-
-(require 'cider)
-
-;; Configure nrepl.el
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(setq cider-repl-tab-command 'indent-for-tab-command)
-
-(setq nrepl-hide-special-buffers nil)
-(setq cider-repl-popup-stacktraces nil)
-(setq cider-repl-history-file "~/.emacs.d/nrepl-history")
-
-;; Repl mode hook
-(add-hook 'cider-mode-hook 'subword-mode)
-
-(setq cider-lein-command "~/.bin/lein")
-
-;; Auto completion for NREPL
-;; (require 'ac-nrepl)
-;;(eval-after-load "auto-complete"
-;;  '(add-to-list 'ac-modes 'nrepl-mode))
-;;(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-
-;;(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
-
-;;(defun set-auto-complete-as-completion-at-point-function ()
-;;  (setq completion-at-point-functions '(auto-complete)))
-;;(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
-
-;;(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
-;;(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
-
-;; git
-
-(require 'magit)
 
 (autoload 'magit-status "magit" nil t)
 
