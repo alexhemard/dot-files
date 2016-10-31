@@ -11,7 +11,9 @@
 
 (defvar my-packages '(
                       ace-jump-mode
+                      ascii
                       auto-complete
+                      auctex
                       cider
                       cl
                       clojure-mode
@@ -20,6 +22,7 @@
                       cyberpunk-theme
                       gh
                       gist
+                      haskell-mode
                       jade-mode
                       less-css-mode
                       logito

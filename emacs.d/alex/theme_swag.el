@@ -9,5 +9,5 @@
 
 (setq default-tab-width 2)
 
-(require 'powerline)
-(powerline-default-theme)
+;; (require 'powerline)
+;; (powerline-default-theme)
