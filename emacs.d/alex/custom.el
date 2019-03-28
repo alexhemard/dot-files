@@ -7,11 +7,15 @@
  '(css-indent-offset 2)
  '(ido-enable-flex-matching t)
  '(ido-mode (quote both) nil (ido))
+ '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(max-mini-window-height 1)
+ '(package-selected-packages
+   (quote
+    (dockerfile-mode mustache-mode protobuf-mode slim-mode powerline yaml-mode web-mode vimgolf undo-tree sws-mode scss-mode scala-mode rainbow-mode rainbow-delimiters paredit markdown-mode magit less-css-mode jade-mode gist cyberpunk-theme color-theme coffee-mode cider auto-complete ace-jump-mode)))
  '(powerline-buffer-size-suffix nil)
- '(powerline-default-separator (quote zigzag))
- '(powerline-height 30)
+ '(powerline-default-separator (quote arrow))
+ '(powerline-height 18)
  '(powerline-text-scale-factor nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

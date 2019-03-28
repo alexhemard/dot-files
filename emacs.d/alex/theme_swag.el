@@ -5,7 +5,7 @@
 (set-face-background 'hl-line "#0000aa")
 
 (load-theme 'cyberpunk t)
-(set-default-font "PragmataProMono-13")
+(set-default-font "PragmataPro Mono-16")
 
 (setq default-tab-width 2)
 

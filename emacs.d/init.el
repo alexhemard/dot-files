@@ -20,14 +20,18 @@
                       cyberpunk-theme
                       gh
                       gist
+                      go-mode
                       jade-mode
                       less-css-mode
                       logito
                       magit
                       markdown-mode
+                      mustache-mode
                       paredit
                       pcache
                       popup
+                      powerline
+                      protobuf-mode
                       rainbow-mode
                       rainbow-delimiters
                       scala-mode

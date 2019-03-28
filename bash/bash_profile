@@ -1,9 +1,17 @@
 SCRIPT_DIR=$(dirname ${BASH_SOURCE})
 
+export SRC_PATH=$HOME/gh
+export COMPOSE_SRC_PATH=$HOME/compose-gh
+export IBM_SRC_PATH=$HOME/ibm_github
+
 source ${SCRIPT_DIR}/git-completion.bash
 source ${SCRIPT_DIR}/git-prompt.sh
+source ${SCRIPT_DIR}/github.sh
+source ${SCRIPT_DIR}/kubectl_aliases
+source ${SCRIPT_DIR}/kube-ps1.sh
 
 export PS1='\[\e[0;35m\]\W\[\e[0;37m\]$(__git_ps1 " (%s)") $ '
+PS1='$(kube_ps1) '$PS1
 
 export PATH=$PATH:$HOME/.bin
 
@@ -24,3 +32,4 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias b="bundle exec"
 alias bi="bundle install --without production"
+alias dnsflush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed"
