@@ -37,11 +37,10 @@ function gcd {
   local name=$(basename "$1")
   local owner=$(basename "$parent")
   local nwo="$owner/$name"
-  local dir="/Users/ahemard/ibm_github/$nwo"
+  local dir="/home/alex/ibm_github/$nwo"
   local host="github.ibm.com"
 
   __gh_clone $parent $name $owner $nwo $dir $host
 }
 
-complete -F __git_compose_clone_complete "ogcd " -o bashdefault -o default
 complete -F __git_ibm_clone_complete "gcd" -o bashdefault -o default

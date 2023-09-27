@@ -1,7 +1,7 @@
 (require 'package)
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")))
+                         ("melpa" . "http://melpa.org/packages/")))
 
 (package-initialize)
 
@@ -12,7 +12,6 @@
                       ace-jump-mode
                       auto-complete
                       cider
-                      cl
                       clojure-mode
                       coffee-mode
                       color-theme
@@ -21,7 +20,6 @@
                       gist
                       go-mode
                       haskell-mode
-                      jade-mode
                       less-css-mode
                       logito
                       magit
@@ -33,14 +31,14 @@
                       powerline
                       protobuf-mode
                       rainbow-mode
-                      rainbow-delimiters
                       scala-mode
                       scss-mode
                       sws-mode
+                      terraform-mode
                       tramp
-                      undo-tree
-                      web-mode
+		                  undo-tree
                       vimgolf
+                      web-mode
                       yaml-mode
                       ))
 
@@ -50,7 +48,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (if (eq system-type 'darwin)
     (progn

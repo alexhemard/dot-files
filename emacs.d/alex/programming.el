@@ -2,11 +2,11 @@
 
 ;; rbenv
 
-(let* ((rbenv (file-name-as-directory (getenv "HOME")))
-       (shims (concat rbenv "shims"))
-       (bin   (concat rbenv "bin")))
-  (setq exec-path (append '(shims bin) exec-path))
-  (setenv "PATH" (concat shims ":" bin ":" (getenv "PATH"))))
+;; (let* ((rbenv (file-name-as-directory (getenv "HOME")))
+;;        (shims (concat rbenv "shims"))
+;;        (bin   (concat rbenv "bin")))
+;;   (setq exec-path (append '(shims bin) exec-path))
+;;   (setenv "PATH" (concat shims ":" bin ":" (getenv "PATH"))))
 
 ;; buffer cleanup
 
@@ -54,14 +54,13 @@
 ;; jade
 
 (require 'sws-mode)
-(require 'jade-mode)
 
 (load "cc-mode")
 
 ;; taste the rainbow
 
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+; (require 'rainbow-delimiters)
+; (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; scss
 

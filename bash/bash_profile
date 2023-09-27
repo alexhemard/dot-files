@@ -1,6 +1,6 @@
 SCRIPT_DIR=$(dirname ${BASH_SOURCE})
 
-export SRC_PATH=$HOME/gh
+export SRC_PATH=$HOME/github
 export COMPOSE_SRC_PATH=$HOME/compose-gh
 export IBM_SRC_PATH=$HOME/ibm_github
 
@@ -33,3 +33,4 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 alias b="bundle exec"
 alias bi="bundle install --without production"
 alias dnsflush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed"
+alias diff=colordiff

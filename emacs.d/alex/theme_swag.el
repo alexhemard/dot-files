@@ -2,12 +2,13 @@
 
 (menu-bar-mode -1)
 
-(set-face-background 'hl-line "#0000aa")
+(set-face-background 'hl-line "#330099")
 
 (load-theme 'cyberpunk t)
-(set-default-font "PragmataPro Mono-16")
+
+(set-frame-font "IBM Plex Mono-18" nil t)
 
 (setq default-tab-width 2)
 
-;; (require 'powerline)
-;; (powerline-default-theme)
+(require 'powerline)
+(powerline-default-theme)
