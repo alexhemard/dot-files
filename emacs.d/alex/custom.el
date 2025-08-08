@@ -10,15 +10,21 @@
  '(coffee-tab-width 2)
  '(css-indent-offset 2)
  '(custom-safe-themes
-   '("b89a4f5916c29a235d0600ad5a0849b1c50fab16c2c518e1d98f0412367e7f97" "6130cf939ae9c765a799437e77869b696dd34f38887edecf1f8620041734381e" default))
+   '("b89a4f5916c29a235d0600ad5a0849b1c50fab16c2c518e1d98f0412367e7f97"
+     "6130cf939ae9c765a799437e77869b696dd34f38887edecf1f8620041734381e" default))
  '(fci-rule-color "#383838")
- '(ido-enable-flex-matching t)
- '(ido-mode 'both nil (ido))
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(max-mini-window-height 1)
  '(package-selected-packages
-   '(csv-mode groovy-mode json-mode string-inflection go-mode go terraform-doc terraform-mode cyberpunk-2019-theme dockerfile-mode mustache-mode protobuf-mode slim-mode powerline yaml-mode web-mode vimgolf undo-tree sws-mode scss-mode scala-mode rainbow-mode rainbow-delimiters paredit markdown-mode magit less-css-mode gist cyberpunk-theme color-theme coffee-mode cider auto-complete ace-jump-mode))
+   '(ace-jump-mode apheleia auto-complete cider coffee-mode color-theme company
+                   consult cyberpunk-theme dap-mode flycheck gist go-mode
+                   haskell-mode inf-clojure json-mode jtsx leetcode magit
+                   marginalia mise mustache-mode orderless paredit powerline
+                   projectile protobuf-mode rainbow-mode scala-mode scss-mode
+                   sws-mode terraform-mode treesit-auto typescript-mode
+                   undo-tree vertico vimgolf vue-mode vue3-mode web-mode
+                   yaml-mode yasnippet zenburn-theme))
  '(powerline-buffer-size-suffix nil)
  '(powerline-default-separator 'arrow)
  '(powerline-height 18)

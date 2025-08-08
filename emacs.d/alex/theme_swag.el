@@ -6,7 +6,7 @@
 
 (load-theme 'cyberpunk t)
 
-(set-frame-font "IBM Plex Mono-18" nil t)
+(set-frame-font "PragmataPro-18" nil t)
 
 (setq default-tab-width 2)
 

@@ -11,48 +11,63 @@
 (defvar my-packages '(
                       ace-jump-mode
                       auto-complete
+                      apheleia
+                      avy
                       cider
                       clojure-mode
-                      coffee-mode
                       color-theme
+                      company
+                      consult
                       cyberpunk-theme
-                      gh
+                      dap-mode
+                      eglot
+                      flycheck
                       gist
                       go-mode
                       haskell-mode
+                      hydra
+                      inf-clojure
+                      json-mode
                       less-css-mode
-                      logito
                       magit
+                      marginalia
                       markdown-mode
-                      mustache-mode
+                      mise
+                      orderless
                       paredit
                       pcache
-                      popup
                       powerline
+                      projectile
                       protobuf-mode
-                      rainbow-mode
-                      scala-mode
-                      scss-mode
                       sws-mode
                       terraform-mode
                       tramp
-		                  undo-tree
-                      vimgolf
+                      undo-tree                      
+                      vertico
                       web-mode
+                      which-key
                       yaml-mode
-                      ))
+                      yasnippet
+                      zenburn-theme))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
-;  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(defun set-exec-path-from-shell-PATH ()
+  "Set up Emacs' `exec-path' and PATH environment variable to match that used by the user's shell.
+
+This is particularly useful under Mac OSX, where GUI apps are not started from a shell."
+  (interactive)
+  (let ((path-from-shell (replace-regexp-in-string "[ \t\n]*$" "" (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
 
 (if (eq system-type 'darwin)
     (progn
-      (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+      (set-exec-path-from-shell-PATH)
       (setq exec-path (append exec-path '("/usr/local/bin")))))
 
 (mapc 'load
