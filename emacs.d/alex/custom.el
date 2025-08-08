@@ -16,15 +16,7 @@
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(max-mini-window-height 1)
- '(package-selected-packages
-   '(ace-jump-mode apheleia auto-complete cider coffee-mode color-theme company
-                   consult cyberpunk-theme dap-mode flycheck gist go-mode
-                   haskell-mode inf-clojure json-mode jtsx leetcode magit
-                   marginalia mise mustache-mode orderless paredit powerline
-                   projectile protobuf-mode rainbow-mode scala-mode scss-mode
-                   sws-mode terraform-mode treesit-auto typescript-mode
-                   undo-tree vertico vimgolf vue-mode vue3-mode web-mode
-                   yaml-mode yasnippet zenburn-theme))
+ '(package-selected-packages nil)
  '(powerline-buffer-size-suffix nil)
  '(powerline-default-separator 'arrow)
  '(powerline-height 18)

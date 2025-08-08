@@ -9,7 +9,6 @@
   (package-refresh-contents))
 
 (defvar my-packages '(
-                      ace-jump-mode
                       auto-complete
                       apheleia
                       avy
@@ -42,6 +41,7 @@
                       sws-mode
                       terraform-mode
                       tramp
+                      treesit-auto
                       undo-tree                      
                       vertico
                       web-mode
